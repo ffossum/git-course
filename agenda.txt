@@ -1,0 +1,39 @@
+Basic GIT usage
+	init
+	status
+	add
+	rm
+	diff (--cached)
+	commit (--amend)
+	checkout
+	reset
+	log
+	.gitignore
+	
+GIT compared to SVN
+	Distributed
+	No deltas
+	Staging
+	SHA1
+	
+Working with a remote repository
+	clone
+	remote
+	(tracking)
+	push
+	pull
+	origin
+	
+Branching, merging and rebasing
+	What is a commit?
+	HEAD
+	tags
+
+Bonus: useful tools
+	stash
+	rebase -i
+	revert
+	cherry-pick
+	bisect
+	clean
+	
