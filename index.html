@@ -65,47 +65,167 @@
                         <li class="fragment">(Useful tools/features)</li>
                     </ul>
                 </section>
+
                 <section>
                     <section>
                         <h2>Basic Git usage</h2>
                     </section>
+
                     <section>
-                        init
-                        test
+                        <h3>init</h3>
+                        <p class="fragment">Initialize your Git repository!</p>
+                        <p>
+                            <pre class="fragment"><code>$ git init MyStuff</code></pre>
+                        </p>
+                        <p class="fragment">
+                            This creates a .git-folder in a new (or existing) MyStuff-project, containing
+                            <ul class="fragment">
+                                <li>Configuration</li>
+                                <li>All project (meta)data</li>
+                            </ul>
+                        </p>
                     </section>
+
                     <section>
-                        status
+                        <h3>status</h3>
+                        <p class="fragment">What's happening in my workspace?</p>
+                        <p>
+                            <pre class="fragment current-visible"><code>$ git status</code></pre>
+                        </p>
+                        <p>
+                            <pre class="fragment"><code>
+$ git status
+On branch master
+
+Initial commit
+
+nothing to commit (create/copy files and use "git add" to track)
+                            </code></pre>
+                        </p>
                     </section>
+
                     <section>
-                        add
+                        <h3>status</h3>
+                        <p>
+                            <pre class="fragment"><code>$ echo "Content" > MyFirstFile.txt</code></pre>
+                        </p>
+                        <p>
+                            <pre class="fragment"><code>
+$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+
+    MyFirstFile.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+                            </code></pre>
+                        </p>
                     </section>
+
                     <section>
-                        rm
+                        <h3>add</h3>
+                        <p class="fragment">Adding new or changed files to the commit (staging)</p>
+                        <p>
+                            <pre class="fragment current-visible"><code>$ git add MyFirstFile.txt</code></pre>
+                        </p>
+                        <p>
+                            <pre class="fragment"><code>
+$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached &lt;file&gt;..." to unstage)
+
+    new file:   MyFirstFile.txt
+                            </code></pre>
+                        </p>
                     </section>
+
                     <section>
-                        diff (--cached)
+                        <h3>rm</h3>
+                        <p class="fragment">Removing staged changes from the commit</p>
+                        <p>
+                            <pre class="fragment current-visible"><code>$ git rm --cached MyFirstFile.txt</code></pre>
+                        </p>
+                        <p>
+                            <pre class="fragment"><code>
+$ git rm --cached MyFirstFile.txt
+rm 'MyFirstFile.txt'
+
+$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+(use "git add &lt;file&gt;..." to include in what will be committed)
+
+MyFirstFile.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+                            </code></pre>
+                        </p>
                     </section>
+
                     <section>
-                        commit (--amend)
+                        <h3>rm</h3>
+                        <p class="fragment">Removing staged changes completely</p>
+                        <p>
+                            <pre class="fragment current-visible"><code>$ git rm --force MyFirstFile.txt</code></pre>
+                        </p>
+                        <p>
+                            <pre class="fragment"><code>
+$ git rm --force MyFirstFile.txt
+rm 'MyFirstFile.txt'
+
+$ git status
+On branch master
+
+Initial commit
+
+nothing to commit (create/copy files and use "git add" to track)
+                            </code></pre>
+                        </p>
                     </section>
+
                     <section>
-                        checkout
+                        <h3>diff (--cached)</h3>
                     </section>
+
                     <section>
-                        reset
+                        <h3>commit (--amend)</h3>
                     </section>
+
                     <section>
-                        log
+                        <h3>checkout</h3>
                     </section>
+
                     <section>
-                        .gitignore
+                        <h3>reset</h3>
                     </section>
+
+                    <section>
+                        <h3>log</h3>
+                    </section>
+
+                    <section>
+                        <h3>.gitignore</h3>
+                    </section>
+
                     <section>
                         <img src="img/basics/18333fig0104-tn.png"/>
                     </section>
+
                     <section>
                         <img src="img/basics/18333fig0105-tn.png"/>
                     </section>
+
                     <section>
                         <img src="img/basics/18333fig0106-tn.png"/>
                     </section>
@@ -166,9 +286,7 @@
 
                     <section>
                         <p>
-                            <small>
-                                <code>$ git branch testing</code>
-                            </small>
+                            <pre><code>$ git branch testing</code></pre>
                         </p>
                         <img src="img/branch/18333fig0304-tn.png"/>
                     </section>
@@ -178,34 +296,26 @@
                     </section>
                     <section>
                         <p>
-                            <small>
-                                <code>$ git checkout testing</code>
-                            </small>
+                            <pre><code>$ git checkout testing</code></pre>
                         </p>
                         <img src="img/branch/18333fig0306-tn.png"/>
                     </section>
 
                     <section>
                         <p>
-                            <small>
-                                <code>$ git commit -a -m 'Made a change'</code>
-                            </small>
+                            <pre><code>$ git commit -a -m 'Made a change'</code></pre>
                         </p>
                         <img src="img/branch/18333fig0307-tn.png"/>
                     </section>
                     <section>
                         <p>
-                            <small>
-                                <code>$ git checkout master</code>
-                            </small>
+                            <pre><code>$ git checkout master</code></pre>
                         </p>
                         <img src="img/branch/18333fig0308-tn.png"/>
                     </section>
                     <section>
                         <p>
-                            <small>
-                                <code>$ git commit -a -m "Made other changes"</code>
-                            </small>
+                            <pre><code>$ git commit -a -m "Made other changes"</code></pre>
                         </p>
                         <img src="img/branch/18333fig0309-tn.png"/>
                     </section>
@@ -220,17 +330,13 @@
                     </section>
                     <section>
                         <p>
-                            <small>
-                                <code>$ git checkout -b iss53</code>
-                            </small>
+                            <pre><code>$ git checkout -b iss53</code></pre>
                         </p>
                         <img src="img/merge/18333fig0311-tn.png"/>
                     </section>
                     <section>
                         <p>
-                            <small>
-                                <code>$ git commit -a -m "iss53: Added new footer</code>
-                            </small>
+                            <pre><code>$ git commit -a -m "iss53: Added new footer</code></pre>
                         </p>
                         <img src="img/merge/18333fig0312-tn.png"/>
                         <p>
@@ -240,22 +346,22 @@
                         </p>
                         <p>
                             <small style="text-align: left">
-                                <code>
+                                <pre><code>
                                     $ git checkout master<br/>
                                     $ git checkout -b hotfix<br/>
                                     $ git commit -a -m "Fixed broken email address"
-                                </code>
+                                </code></pre>
                             </small>
                         </p>
                     </section>
                     <section>
                         <p>
                             <small style="text-align: left">
-                                <code>
+                                <pre><code>
                                     $ git checkout master<br/>
                                     $ git checkout -b hotfix<br/>
                                     $ git commit -a -m "Fixed broken email address"
-                                </code>
+                                </code></pre>
                             </small>
                         </p>
                         <img src="img/merge/18333fig0313-tn.png"/>
@@ -263,32 +369,32 @@
                     <section>
                         <p>
                             <small style="text-align: left">
-                                <code>
+                                <pre><code>
                                     $ git checkout master<br/>
                                     $ git merge hotfix
-                                </code>
+                                </code></pre>
                             </small>
                         </p>
                         <img src="img/merge/18333fig0314-tn.png"/>
                         <p>
                             <small style="text-align: left">
-                                <code>
+                                <pre><code>
                                     Updating f42c576..3a0874c<br/>
                                     Fast-forward<br/>
                                     &nbsp;README | 1 -<br/>
                                     &nbsp;1 file changed, 1 deletion(-)
-                                </code>
+                                </code></pre>
                             </small>
                         </p>
                     </section>
                     <section>
                          <p>
                             <small style="text-align: left">
-                                <code>
+                                <pre><code>
                                     $ git branch -d hotfix<br/>
                                     $ git checkout iss53<br/>
                                     $ git commit -a -m "iss53: Finished the new footer"
-                                </code>
+                                </code></pre>
                             </small>
                         </p>
                         <img src="img/merge/18333fig0315-tn.png"/>
@@ -299,21 +405,21 @@
                     <section>
                         <p>
                             <small style="text-align: left">
-                                <code>
+                                <pre><code>
                                     $ git checkout master<br/>
                                     $ git merge iss53
-                                </code>
+                                </code></pre>
                             </small>
                         </p>
                         <img src="img/merge/18333fig0317-tn.png"/>
                         <p>
                             <small style="text-align: left">
-                                <code>
+                                <pre><code>
                                     Auto-merging README<br/>
                                     Merge made by the 'recursive' strategy.<br/>
                                     &nbsp;index.html | 1 +<br/>
                                     &nbsp;1 file changed, 1 insertion(+)
-                                </code>
+                                </code></pre>
                             </small>
                         </p>
                     </section>
