@@ -130,7 +130,7 @@ nothing added to commit but untracked files present (use "git add" to track)
                         <h3>add</h3>
                         <p class="fragment">Adding new or changed files to the commit (staging)</p>
                         <p>
-                            <pre class="fragment current-visible"><code>$ git add MyFirstFile.txt</code></pre>
+                            <pre class="fragment"><code>$ git add MyFirstFile.txt</code></pre>
                         </p>
                         <p>
                             <pre class="fragment"><code>
@@ -148,25 +148,22 @@ Changes to be committed:
                     </section>
 
                     <section>
-                        <h3>rm</h3>
+                        <h3>reset</h3>
                         <p class="fragment">Removing staged changes from the commit</p>
                         <p>
-                            <pre class="fragment current-visible"><code>$ git rm --cached MyFirstFile.txt</code></pre>
+                            <pre class="fragment"><code>$ git reset HEAD MyFirstFile.txt</code></pre>
                         </p>
                         <p>
                             <pre class="fragment"><code>
-$ git rm --cached MyFirstFile.txt
-rm 'MyFirstFile.txt'
-
 $ git status
 On branch master
 
 Initial commit
 
 Untracked files:
-(use "git add &lt;file&gt;..." to include in what will be committed)
+  (use "git add &lt;file&gt;..." to include in what will be committed)
 
-MyFirstFile.txt
+    MyFirstFile.txt
 
 nothing added to commit but untracked files present (use "git add" to track)
                             </code></pre>
@@ -175,21 +172,18 @@ nothing added to commit but untracked files present (use "git add" to track)
 
                     <section>
                         <h3>rm</h3>
-                        <p class="fragment">Removing staged changes completely</p>
+                        <p class="fragment">Removing/deleting existing files completely</p>
                         <p>
-                            <pre class="fragment current-visible"><code>$ git rm --force MyFirstFile.txt</code></pre>
+                            <pre class="fragment"><code>$ git rm MyExistingFile.txt</code></pre>
                         </p>
                         <p>
                             <pre class="fragment"><code>
-$ git rm --force MyFirstFile.txt
-rm 'MyFirstFile.txt'
-
 $ git status
 On branch master
+Changes to be committed:
+  (use "git reset HEAD &lt;file&gt;..." to unstage)
 
-Initial commit
-
-nothing to commit (create/copy files and use "git add" to track)
+    deleted:    MyExistingFile.txt
                             </code></pre>
                         </p>
                     </section>
@@ -204,10 +198,6 @@ nothing to commit (create/copy files and use "git add" to track)
 
                     <section>
                         <h3>checkout</h3>
-                    </section>
-
-                    <section>
-                        <h3>reset</h3>
                     </section>
 
                     <section>
