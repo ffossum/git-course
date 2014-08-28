@@ -56,14 +56,28 @@
                 <section>
                     <h2>Agenda:</h2>
                     <ul>
-                        <li class="fragment">Basic Git usage</li>
-                        <li class="fragment">Git compared to Subversion</li>
-                        <li class="fragment">Working with a remote repository</li>
+                        <li class="fragment">How Git works</li>
+						<li class="fragment">Basic Git usage</li>                        
                         <li class="fragment">Branching, merging and rebasing</li>
-                        <li class="fragment">(Useful tools/features)</li>
+						<li class="fragment">Working with remote repositories</li>
+                        <li class="fragment">Bonus: Useful tools</li>
                     </ul>
                 </section>
+                <section>
+                    <section>
+                        <h2>How Git works</h2>
+                    </section>
+                    <section>
+                        <img src="img/basics/18333fig0104-tn.png"/>
+                    </section>
+                    <section>
+                        <img src="img/basics/18333fig0105-tn.png"/>
+                    </section>
+                    <section>
+                        <img src="img/basics/18333fig0106-tn.png"/>
+                    </section>
 
+                </section>
                 <section>
                     <section>
                         <h2>Basic Git usage</h2>
@@ -146,29 +160,6 @@ Changes to be committed:
                     </section>
 
                     <section>
-                        <h3>reset</h3>
-                        <p class="fragment">Removing staged changes from the commit</p>
-                        <p>
-                            <pre class="fragment"><code>$ git reset HEAD MyFirstFile.txt</code></pre>
-                        </p>
-                        <p>
-                            <pre class="fragment"><code>
-$ git status
-On branch master
-
-Initial commit
-
-Untracked files:
-  (use "git add &lt;file&gt;..." to include in what will be committed)
-
-    MyFirstFile.txt
-
-nothing added to commit but untracked files present (use "git add" to track)
-                            </code></pre>
-                        </p>
-                    </section>
-
-                    <section>
                         <h3>rm</h3>
                         <p class="fragment">Removing/deleting existing files completely</p>
                         <p>
@@ -191,15 +182,38 @@ Changes to be committed:
                     </section>
 
                     <section>
-                        <h3>commit (--amend)</h3>
-                    </section>
-
-                    <section>
-                        <h3>checkout</h3>
+                        <h3>commit</h3>
                     </section>
 
                     <section>
                         <h3>log</h3>
+                    </section>
+
+                    <section>
+                        <h3>reset</h3>
+                        <p class="fragment">Removing staged changes from the commit</p>
+                        <p>
+                        <pre class="fragment"><code>$ git reset HEAD MyFirstFile.txt</code></pre>
+                        </p>
+                        <p>
+                            <pre class="fragment"><code>
+$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+(use "git add &lt;file&gt;..." to include in what will be committed)
+
+MyFirstFile.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+                            </code></pre>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>checkout</h3>
                     </section>
 
                     <section>
@@ -209,13 +223,7 @@ Changes to be committed:
 
                 <section>
                     <section>
-                        <h2>Git compared to Subversion</h2>
-                    </section>
-                    <section>
-                        <img src="img/basics/18333fig0104-tn.png"/>
-                    </section>
-                    <section>
-                        <img src="img/basics/18333fig0105-tn.png"/>
+                        <h2>Branching</h2>
                     </section>
                     <section>
                         <img src="img/branch/18333fig0301-tn.png"/>
@@ -224,43 +232,12 @@ Changes to be committed:
                         <img src="img/branch/18333fig0302-tn.png"/>
                     </section>
                     <section>
-                        <img src="img/basics/18333fig0106-tn.png"/>
-                    </section>
-                    
-                </section>
-
-                <section>
-                    <section>
-                        <h2>Working with a remote repository</h2>
-                    </section>
-                    <section>
-                        Clone
-                    </section>
-                    <section>
-                        Remote (tracking)
-                    </section>
-                    <section>
-                        Push
-                    </section>
-                    <section>
-                        Pull
-                    </section>
-                    <section>
-                        Origin
-                    </section>
-                </section>
-
-                <section>
-                    <section>
-                        <h2>Branching</h2>
-                    </section>
-                    <section>
                         <img src="img/branch/18333fig0303-tn.png"/>
                     </section>
 
                     <section>
                         <p>
-                            <pre><code>$ git branch testing</code></pre>
+                        <pre><code>$ git branch testing</code></pre>
                         </p>
                         <img src="img/branch/18333fig0304-tn.png"/>
                     </section>
@@ -270,26 +247,26 @@ Changes to be committed:
                     </section>
                     <section>
                         <p>
-                            <pre><code>$ git checkout testing</code></pre>
+                        <pre><code>$ git checkout testing</code></pre>
                         </p>
                         <img src="img/branch/18333fig0306-tn.png"/>
                     </section>
 
                     <section>
                         <p>
-                            <pre><code>$ git commit -a -m 'Made a change'</code></pre>
+                        <pre><code>$ git commit -m 'Made a change'</code></pre>
                         </p>
                         <img src="img/branch/18333fig0307-tn.png"/>
                     </section>
                     <section>
                         <p>
-                            <pre><code>$ git checkout master</code></pre>
+                        <pre><code>$ git checkout master</code></pre>
                         </p>
                         <img src="img/branch/18333fig0308-tn.png"/>
                     </section>
                     <section>
                         <p>
-                            <pre><code>$ git commit -a -m "Made other changes"</code></pre>
+                        <pre><code>$ git commit -m "Made other changes"</code></pre>
                         </p>
                         <img src="img/branch/18333fig0309-tn.png"/>
                     </section>
@@ -304,13 +281,13 @@ Changes to be committed:
                     </section>
                     <section>
                         <p>
-                            <pre><code>$ git checkout -b iss53</code></pre>
+                        <pre><code>$ git checkout -b iss53</code></pre>
                         </p>
                         <img src="img/merge/18333fig0311-tn.png"/>
                     </section>
                     <section>
                         <p>
-                            <pre><code>$ git commit -a -m "iss53: Added new footer</code></pre>
+                        <pre><code>$ git commit -m "iss53: Added new footer</code></pre>
                         </p>
                         <img src="img/merge/18333fig0312-tn.png"/>
                         <p>
@@ -319,57 +296,48 @@ Changes to be committed:
                             </em>
                         </p>
                         <p>
-                            <small style="text-align: left">
+
                                 <pre><code>
-                                    $ git checkout master<br/>
-                                    $ git checkout -b hotfix<br/>
-                                    $ git commit -a -m "Fixed broken email address"
+$ git checkout master
+$ git checkout -b hotfix
+$ git commit -m "Fixed broken email address"
                                 </code></pre>
-                            </small>
                         </p>
                     </section>
                     <section>
                         <p>
-                            <small style="text-align: left">
-                                <pre><code>
-                                    $ git checkout master<br/>
-                                    $ git checkout -b hotfix<br/>
-                                    $ git commit -a -m "Fixed broken email address"
-                                </code></pre>
-                            </small>
+                            <pre><code>
+$ git checkout master
+$ git checkout -b hotfix
+$ git commit -a -m "Fixed broken email address"
+                            </code></pre>
                         </p>
                         <img src="img/merge/18333fig0313-tn.png"/>
                     </section>
                     <section>
                         <p>
-                            <small style="text-align: left">
-                                <pre><code>
-                                    $ git checkout master<br/>
-                                    $ git merge hotfix
-                                </code></pre>
-                            </small>
+                            <pre><code>
+$ git checkout master
+$ git merge hotfix
+                            </code></pre>
                         </p>
                         <img src="img/merge/18333fig0314-tn.png"/>
                         <p>
-                            <small style="text-align: left">
-                                <pre><code>
-                                    Updating f42c576..3a0874c<br/>
-                                    Fast-forward<br/>
-                                    &nbsp;README | 1 -<br/>
-                                    &nbsp;1 file changed, 1 deletion(-)
-                                </code></pre>
-                            </small>
+                            <pre><code>
+Updating f42c576..3a0874c
+Fast-forward
+ README | 1 -
+ 1 file changed, 1 deletion(-)
+                            </code></pre>
                         </p>
                     </section>
                     <section>
-                         <p>
-                            <small style="text-align: left">
-                                <pre><code>
-                                    $ git branch -d hotfix<br/>
-                                    $ git checkout iss53<br/>
-                                    $ git commit -a -m "iss53: Finished the new footer"
-                                </code></pre>
-                            </small>
+                        <p>
+                            <pre><code>
+$ git branch -d hotfix
+$ git checkout iss53
+$ git commit -a -m "iss53: Finished the new footer"
+                            </code></pre>
                         </p>
                         <img src="img/merge/18333fig0315-tn.png"/>
                     </section>
@@ -378,23 +346,19 @@ Changes to be committed:
                     </section>
                     <section>
                         <p>
-                            <small style="text-align: left">
-                                <pre><code>
-                                    $ git checkout master<br/>
-                                    $ git merge iss53
-                                </code></pre>
-                            </small>
+                            <pre><code>
+$ git checkout master
+$ git merge iss53
+                            </code></pre>
                         </p>
                         <img src="img/merge/18333fig0317-tn.png"/>
                         <p>
-                            <small style="text-align: left">
-                                <pre><code>
-                                    Auto-merging README<br/>
-                                    Merge made by the 'recursive' strategy.<br/>
-                                    &nbsp;index.html | 1 +<br/>
-                                    &nbsp;1 file changed, 1 insertion(+)
-                                </code></pre>
-                            </small>
+                            <pre><code>
+Auto-merging README
+Merge made by the 'recursive' strategy.
+ index.html | 1 +
+1 file changed, 1 insertion(+)
+                            </code></pre>
                         </p>
                     </section>
                 </section>
@@ -414,21 +378,24 @@ Changes to be committed:
                     </section>
                     <section>
                         <img src="img/rebase/18333fig0330-tn.png"/>
+                    </section>                    
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Working with remote repositories</h2>
                     </section>
                     <section>
-                        <img src="img/rebase/18333fig0331-tn.png"/>
+                        Clone
                     </section>
                     <section>
-                        <img src="img/rebase/18333fig0332-tn.png"/>
+                        Push
                     </section>
                     <section>
-                        <img src="img/rebase/18333fig0333-tn.png"/>
+                        Pull
                     </section>
                     <section>
-                        <img src="img/rebase/18333fig0334-tn.png"/>
-                    </section>
-                    <section>
-                        <img src="img/rebase/18333fig0335-tn.png"/>
+                        Origin
                     </section>
                 </section>
 
@@ -453,6 +420,9 @@ Changes to be committed:
                     </section>
                     <section>
                         clean
+                    </section>
+                    <section>
+                        commit --amend
                     </section>
                 </section>
 			</div>
@@ -484,7 +454,6 @@ Changes to be committed:
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
