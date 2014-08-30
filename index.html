@@ -224,6 +224,7 @@ nothing added to commit but untracked files present (use "git add" to track)
                 <section>
                     <section>
                         <h2>Branching</h2>
+                        <img src="img/branch/cherrybranch.jpg"/>
                     </section>
                     <section>
                         <img src="img/branch/18333fig0301-tn.png"/>
@@ -275,6 +276,7 @@ nothing added to commit but untracked files present (use "git add" to track)
                 <section>
                     <section>
                         <h2>Merging</h2>
+                        <img src="img/merge/sammenfletting.jpg" style="width: 20%; height: 20%"/>
                     </section>
                     <section>
                         <img src="img/merge/18333fig0310-tn.png"/>
@@ -297,68 +299,60 @@ nothing added to commit but untracked files present (use "git add" to track)
                         </p>
                         <p>
 
-                                <pre><code>
-$ git checkout master
+                                <pre><code>$ git checkout master
 $ git checkout -b hotfix
-$ git commit -m "Fixed broken email address"
-                                </code></pre>
+$ git commit -m "Fixed broken email address"</code></pre>
                         </p>
                     </section>
                     <section>
                         <p>
-                            <pre><code>
-$ git checkout master
+                            <pre><code>$ git checkout master
 $ git checkout -b hotfix
-$ git commit -a -m "Fixed broken email address"
-                            </code></pre>
+$ git commit -a -m "Fixed broken email address"</code></pre>
                         </p>
                         <img src="img/merge/18333fig0313-tn.png"/>
+                        <p>
+                            We want to merge changes from <em>hotfix</em> into <em>master</em>.
+                        </p>
                     </section>
                     <section>
                         <p>
-                            <pre><code>
-$ git checkout master
-$ git merge hotfix
-                            </code></pre>
+                            <pre><code>$ git checkout master
+$ git merge hotfix</code></pre>
                         </p>
                         <img src="img/merge/18333fig0314-tn.png"/>
                         <p>
-                            <pre><code>
-Updating f42c576..3a0874c
+                            <pre><code>Updating f42c576..3a0874c
 Fast-forward
  README | 1 -
- 1 file changed, 1 deletion(-)
-                            </code></pre>
+ 1 file changed, 1 deletion(-)</code></pre>
                         </p>
                     </section>
                     <section>
                         <p>
-                            <pre><code>
-$ git branch -d hotfix
+                            <pre><code>$ git branch -d hotfix
 $ git checkout iss53
-$ git commit -a -m "iss53: Finished the new footer"
-                            </code></pre>
+$ git commit -a -m "iss53: Finished the new footer"</code></pre>
                         </p>
                         <img src="img/merge/18333fig0315-tn.png"/>
+                        <p>
+                            Now we want to merge changes from <em>iss53</em> into <em>master</em>.
+                        </p>
                     </section>
                     <section>
                         <img src="img/merge/18333fig0316-tn.png"/>
                     </section>
                     <section>
                         <p>
-                            <pre><code>
-$ git checkout master
-$ git merge iss53
-                            </code></pre>
+                            <pre><code>$ git checkout master
+$ git merge iss53</code></pre>
                         </p>
                         <img src="img/merge/18333fig0317-tn.png"/>
                         <p>
-                            <pre><code>
-Auto-merging README
+                            <pre><code>Auto-merging README
 Merge made by the 'recursive' strategy.
  index.html | 1 +
-1 file changed, 1 insertion(+)
-                            </code></pre>
+1 file changed, 1 insertion(+)</code></pre>
                         </p>
                     </section>
                 </section>
@@ -366,17 +360,28 @@ Merge made by the 'recursive' strategy.
                 <section>
                     <section>
                         <h2>Rebasing</h2>
+                        <img src="img/rebase/delorean.jpg"/>
                     </section>
                     <section>
                         <img src="img/rebase/18333fig0327-tn.png"/>
                     </section>
                     <section>
+                        <p>
+                            <pre><code>$ git checkout master
+$ git merge experiment</code></pre>
+                        </p>
                         <img src="img/rebase/18333fig0328-tn.png"/>
                     </section>
                     <section>
+                        <pre><code>$ git checkout experiment
+$ git rebase master
+First, rewinding head to replay your work on top of it...
+Applying: added staged command</code></pre>
                         <img src="img/rebase/18333fig0329-tn.png"/>
                     </section>
                     <section>
+                        <pre><code>$ git checkout master
+$ git merge experiment</code></pre>
                         <img src="img/rebase/18333fig0330-tn.png"/>
                     </section>                    
                 </section>
