@@ -17,6 +17,7 @@ GIT compared to SVN
 	SHA1
 	
 Working with a remote repository
+
 	clone
 	remote
 	(tracking)
@@ -35,5 +36,6 @@ Bonus: useful tools
 	revert
 	cherry-pick
 	bisect
-	clean
-	
+	clean 
+
+Test
