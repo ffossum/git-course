@@ -84,7 +84,15 @@
                     </section>
 
                     <section>
-                        <h3>init</h3>
+                        <h3>Help!</h3>
+                        <p class="fragment">Show built-in documentation</p>
+                        <p>
+                            <pre class="fragment"><code>$ git help &lt;command&gt;</code></pre>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>Init</h3>
                         <p class="fragment">Initialize your Git repository!</p>
                         <p>
                             <pre class="fragment"><code>$ git init MyStuff</code></pre>
@@ -99,7 +107,7 @@
                     </section>
 
                     <section>
-                        <h3>status</h3>
+                        <h3>Status</h3>
                         <p class="fragment">What's happening in my workspace?</p>
                         <p>
                             <pre class="fragment current-visible"><code>$ git status</code></pre>
@@ -117,7 +125,7 @@ nothing to commit (create/copy files and use "git add" to track)
                     </section>
 
                     <section>
-                        <h3>status</h3>
+                        <h3>Status (cont.)</h3>
                         <p>
                             <pre class="fragment"><code>$ echo "Content" > MyFirstFile.txt</code></pre>
                         </p>
@@ -139,7 +147,7 @@ nothing added to commit but untracked files present (use "git add" to track)
                     </section>
 
                     <section>
-                        <h3>add</h3>
+                        <h3>Add</h3>
                         <p class="fragment">Adding new or changed files to the commit (staging)</p>
                         <p>
                             <pre class="fragment"><code>$ git add MyFirstFile.txt</code></pre>
@@ -160,7 +168,7 @@ Changes to be committed:
                     </section>
 
                     <section>
-                        <h3>rm</h3>
+                        <h3>RM</h3>
                         <p class="fragment">Removing/deleting existing files completely</p>
                         <p>
                             <pre class="fragment"><code>$ git rm MyExistingFile.txt</code></pre>
@@ -178,22 +186,59 @@ Changes to be committed:
                     </section>
 
                     <section>
-                        <h3>diff (--cached)</h3>
+                        <h3>Diff</h3>
+                        <p class="fragment">Show differences between e.g. local file and previous commit</p>
+                        <p>
+                            <pre class="fragment"><code>$ git diff</code></pre>
+                            <pre class="fragment"><code>$ git diff --cached</code></pre>
+                        </p>
                     </section>
 
                     <section>
                         <h3>commit</h3>
+                        <p class="fragment">Commit changes to repository</p>
+                        <p>
+                            <pre class="fragment"><code>$ git commit -m "Add support for new feature xxx"</code></pre>
+                        </p>
+                        <p>
+                            <pre class="fragment"><code>
+[master a8be286] Add support for new feature xxx
+1 file changed, 0 insertions(+), 0 deletions(-)
+create mode 100644 SomeNewFile.txt
+                            </code></pre>
+                        </p>
                     </section>
 
                     <section>
-                        <h3>log</h3>
+                        <h3>Log</h3>
+                        <p class="fragment">Show change history</p>
+                        <p>
+                            <pre class="fragment"><code>$ git log</code></pre>
+                            <pre class="fragment"><code>$ git log otherBranch</code></pre>
+                        </p>
+                        <p>
+                            <pre class="fragment"><code>
+$ git log
+commit 9746a1803a9389900fb7eb3196bfe6913f50a6a8
+Author: Anders Gjendem &lt;anders.gjendem@gmail.com&gt;
+Date:   Thu Aug 28 17:32:45 2014 +0200
+
+Added something else
+
+commit 4affedb0d0b0be1ac86c8ada6dea5f2715b65009
+Author: Anders Gjendem &lt;anders.gjendem@gmail.com&gt;
+Date:   Thu Aug 28 10:05:08 2014 +0200
+
+Adding existing file
+                            </code></pre>
+                        </p>
                     </section>
 
                     <section>
-                        <h3>reset</h3>
+                        <h3>Reset</h3>
                         <p class="fragment">Removing staged changes from the commit</p>
                         <p>
-                        <pre class="fragment"><code>$ git reset HEAD MyFirstFile.txt</code></pre>
+                            <pre class="fragment"><code>$ git reset HEAD MyFirstFile.txt</code></pre>
                         </p>
                         <p>
                             <pre class="fragment"><code>$ git status
@@ -211,11 +256,37 @@ nothing added to commit but untracked files present (use "git add" to track)</co
                     </section>
 
                     <section>
-                        <h3>checkout</h3>
+                        <h3>Checkout</h3>
+                        <p class="fragment">Checkout a branch or paths to the working tree</p>
+                        <p class="fragment">May be used to switch between branches, overwrite local changes with the original or another version</p>
+                        <p>
+                            <pre class="fragment"><code>$ git checkout anotherBranch</code></pre>
+                            <pre class="fragment"><code>
+# Reset the file to HEAD
+$ git checkout MyFirstFile.txt
+                            </code></pre>
+                        </p>
                     </section>
 
                     <section>
                         <h3>.gitignore</h3>
+                        <p class="fragment">File with patterns for files Git should ignore</p>
+                        <p>
+                            <pre class="fragment"><code>
+$ cat .gitignore
+# Ignore Intellij configuration files:
+.idea/
+
+# Ignore target folders from build:
+target/
+
+# Ignore property file templates:
+*.properties.template
+
+# Ignore self (don't commit, local only!)
+#.gitignore
+                            </code></pre>
+                        </p>
                     </section>
                 </section>
 
@@ -390,35 +461,60 @@ $ git merge experiment</code></pre>
                     <section>
                         <h2>Working with remote repositories</h2>
                     </section>
-                    <section>
-                        Clone
-                    </section>
-                    <section>
-                        Push
-                    </section>
-                    <section>
-                        Pull
-                    </section>
-                    <section>
-                        Origin
-                    </section>
-                </section>
 
-                <section>
                     <section>
-                        <h2>Working with a remote repository</h2>
+                        <h3>Clone</h3>
+                        <p class="fragment">Clone a repository locally</p>
+                        <p>
+                            <pre class="fragment"><code>$ git clone https://github.com/ffossum/git-course.git</code></pre>
+                        </p>
+                        <p>
+                            <pre class="fragment"><code>
+Cloning into 'git-course'...
+remote: Counting objects: 6807, done.
+remote: Compressing objects: 100% (2968/2968), done.
+remote: Total 6807 (delta 3610), reused 6807 (delta 3610)
+Receiving objects: 100% (6807/6807), 4.38 MiB | 1.33 MiB/s, done.
+Resolving deltas: 100% (3610/3610), done.
+Checking connectivity... done.
+                            </code></pre>
+                        </p>
                     </section>
+
                     <section>
-                        Clone
+                        <h3>Pull</h3>
+                        <p class="fragment">Pull changes from remote repositories</p>
+                        <p class="fragment">(requires that you've got no local changes to tracked files (see stash!))</p>
+                        <p>
+                            <pre class="fragment"><code>$ git pull</code></pre>
+                            <pre class="fragment"><code>$ git pull --rebase</code></pre>
+                        </p>
+                        <p class="fragment">(Fetch + merge does the same as 'git pull' in distinct operations, handy in some situations)</p>
                     </section>
+
                     <section>
-                        Push
+                        <h3>Push</h3>
+                        <p class="fragment">Push your local changes remotely</p>
+                        <p class="fragment">(requires that you've pulled the latest changes in the relevant branches)</p>
+                        <p>
+                            <pre class="fragment"><code>$ git push</code></pre>
+                        </p>
+                        <p>
+                            <pre class="fragment"><code>
+Counting objects: 22, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.11 KiB | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+To git@github.com:ffossum/git-course.git
+   e0fa526..12c990a  master -> master
+                            </code></pre>
+                        </p>
                     </section>
+
                     <section>
-                        Pull
-                    </section>
-                    <section>
-                        Origin
+                        <h3>Origin</h3>
+                        <p>TODO: ...</p>
                     </section>
                 </section>
 
@@ -426,26 +522,135 @@ $ git merge experiment</code></pre>
                     <section>
                         <h2>Useful tools</h2>
                     </section>
+
                     <section>
-                        stash
+                        <h3>Stash</h3>
+                        <p class="fragment">Stash your changes away in a pile in the nearest, dark, corner</p>
+                        <p>
+                            <pre class="fragment"><code>$ git stash</code></pre>
+                        </p>
+                        <p>
+                            <pre class="fragment"><code>
+$ git stash
+Saved working directory and index state WIP on master: d60df91 More slides
+HEAD is now at d60df91 More slides
+
+$ git stash list
+stash@{0}: WIP on master: d60df91 More slides
+stash@{1}: WIP on master: ewa6eaf Older stuff
+
+$ git stash pop
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+(use "git add &lt;file&gt;..." to update what will be committed)
+(use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+
+modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (c33ae0f44b3af122af99f377880132f9fccca3b1)
+                            </code></pre>
+                        </p>
                     </section>
+
                     <section>
-                        rebase -i
+                        <h3>Interactive rebase</h3>
+                        <p class="fragment">Change the commit history</p>
+                        <p class="fragment">(but avoid it after pushing!)</p>
+                        <p>
+                            <pre class="fragment"><code>$ git rebase -i &lt;commit&gt;</code></pre>
+                        </p>
+                        <p class="fragment">
+                            In your editor:
+                            <pre class="fragment"><code>
+pick 3778598 Test commit from Android
+pick e0fa526 Added 'too much branching' image to rebase chapter
+pick 12c990a Added a few more examples
+pick d60df91 More slides
+
+# Rebase 16e31cf..d60df91 onto 16e31cf
+#
+# Commands:
+#  p, pick = use commit
+#  r, reword = use commit, but edit the commit message
+#  e, edit = use commit, but stop for amending
+#  s, squash = use commit, but meld into previous commit
+#  f, fixup = like "squash", but discard this commit's log message
+#  x, exec = run command (the rest of the line) using shell
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+                            </code></pre>
+                        </p>
                     </section>
+
                     <section>
-                        revert
+                        <h3>Revert</h3>
+                        <p class="fragment">Revert a previous commit</p>
+                        <p>
+                            <pre class="fragment"><code>$ git revert &lt;commit&gt;</code></pre>
+                        </p>
+                        <p>
+                            <pre class="fragment"><code>
+$ git revert a8be286a00c2ae1bb27a63db4f9f50b1d868a913
+[master e7f5d45] Revert "Reverted commit that broke something"
+1 file changed, 0 insertions(+), 0 deletions(-)
+   delete mode 100644 newfile
+
+$ git log
+commit e7f5d4581a6fdc820091b1a47b44bb9ce959dccf
+Author: Anders Gjendem &lt;anders.gjendem@gmail.com&gt;
+Date:   Mon Sep 1 14:35:11 2014 +0200
+
+    Revert "Reverted commit that broke something"
+
+    This reverts commit a8be286a00c2ae1bb27a63db4f9f50b1d868a913.
+(...)
+                            </code></pre>
+                        </p>
                     </section>
+
                     <section>
-                        cherry-pick
+                        <h3>Cherry-pick</h3>
+                        <p class="fragment">Apply the changes from previous commit(s) from another branch, on the current</p>
+                        <p>
+                        <pre class="fragment"><code>$ git cherry-pick &lt;commit&gt;</code></pre>
+                        </p>
                     </section>
+
                     <section>
-                        bisect
+                        <h3>Bisect</h3>
+                        <p class="fragment">Find the commit that introduced a bug</p>
+                        <p class="fragment">
+                            Find the guilty by doing a binary-search for the commit. Git assists in giving you the next commit to test (manually), while you provide feedback (good/bad/skip/reset)
+                        </p>
                     </section>
+
                     <section>
-                        clean
+                        <h3>Clean</h3>
+                        <p class="fragment">Remove untracked files from the working tree</p>
+                        <p class="fragment">
+                            <pre><code>$ git clean</code></pre>
+                        </p>
+                        <p class="fragment">
+                            Remove untracked files:
+                            <pre class="fragment"><code>$ git clean -d -f -x</code></pre>
+                        </p>
+                        <p class="fragment">
+                            Remove untracked files while retaining Intellij-files:
+                            <pre class="fragment"><code>$ git clean -d -f -x -e "*.iml" -e ".idea"</code></pre>
+                        </p>
                     </section>
+
                     <section>
-                        commit --amend
+                        <h3>Amend last commit</h3>
+                        <p class="fragment">Replace the last commit on the branch with a new commit with more changes (only before pushing!)</p>
+                        <p>
+                            <pre class="fragment"><code>$ git commit --amend</code></pre>
+                        </p>
                     </section>
                 </section>
 			</div>
