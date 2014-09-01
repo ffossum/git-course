@@ -179,21 +179,58 @@ Changes to be committed:
 
                     <section>
                         <h3>diff (--cached)</h3>
+                        <p class="fragment">Show differences between e.g. local file and previous commit</p>
+                        <p>
+                            <pre class="fragment"><code>$ git diff</code></pre>
+                            <pre class="fragment"><code>$ git diff --cached</code></pre>
+                        </p>
                     </section>
 
                     <section>
                         <h3>commit</h3>
+                        <p class="fragment">Commit changes to repository</p>
+                        <p>
+                            <pre class="fragment"><code>$ git commit -m "Add support for new feature xxx"</code></pre>
+                        </p>
+                        <p>
+                            <pre class="fragment"><code>
+[master a8be286] Add support for new feature xxx
+1 file changed, 0 insertions(+), 0 deletions(-)
+create mode 100644 SomeNewFile.txt
+                            </code></pre>
+                        </p>
                     </section>
 
                     <section>
                         <h3>log</h3>
+                        <p class="fragment">Show change history</p>
+                        <p>
+                            <pre class="fragment"><code>$ git log</code></pre>
+                            <pre class="fragment"><code>$ git log otherBranch</code></pre>
+                        </p>
+                        <p>
+                            <pre class="fragment"><code>
+$ git log
+commit 9746a1803a9389900fb7eb3196bfe6913f50a6a8
+Author: Anders Gjendem &lt;anders.gjendem@gmail.com&gt;
+Date:   Thu Aug 28 17:32:45 2014 +0200
+
+Added something else
+
+commit 4affedb0d0b0be1ac86c8ada6dea5f2715b65009
+Author: Anders Gjendem &lt;anders.gjendem@gmail.com&gt;
+Date:   Thu Aug 28 10:05:08 2014 +0200
+
+Adding existing file
+                            </code></pre>
+                        </p>
                     </section>
 
                     <section>
                         <h3>reset</h3>
                         <p class="fragment">Removing staged changes from the commit</p>
                         <p>
-                        <pre class="fragment"><code>$ git reset HEAD MyFirstFile.txt</code></pre>
+                            <pre class="fragment"><code>$ git reset HEAD MyFirstFile.txt</code></pre>
                         </p>
                         <p>
                             <pre class="fragment"><code>$ git status
@@ -212,10 +249,36 @@ nothing added to commit but untracked files present (use "git add" to track)</co
 
                     <section>
                         <h3>checkout</h3>
+                        <p class="fragment">Checkout a branch or paths to the working tree</p>
+                        <p class="fragment">May be used to switch between branches, overwrite local changes with the original or another version</p>
+                        <p>
+                            <pre class="fragment"><code>$ git checkout anotherBranch</code></pre>
+                            <pre class="fragment"><code>
+# Reset the file to HEAD
+$ git checkout MyFirstFile.txt
+                            </code></pre>
+                        </p>
                     </section>
 
                     <section>
                         <h3>.gitignore</h3>
+                        <p class="fragment">File with patterns for files Git should ignore</p>
+                        <p>
+                            <pre class="fragment"><code>
+$ cat .gitignore
+# Ignore Intellij configuration files:
+.idea/
+
+# Ignore target folders from build:
+target/
+
+# Ignore property file templates:
+*.properties.template
+
+# Ignore self (don't commit, local only!)
+#.gitignore
+                            </code></pre>
+                        </p>
                     </section>
                 </section>
 
@@ -389,24 +452,6 @@ $ git merge experiment</code></pre>
                 <section>
                     <section>
                         <h2>Working with remote repositories</h2>
-                    </section>
-                    <section>
-                        Clone
-                    </section>
-                    <section>
-                        Push
-                    </section>
-                    <section>
-                        Pull
-                    </section>
-                    <section>
-                        Origin
-                    </section>
-                </section>
-
-                <section>
-                    <section>
-                        <h2>Working with a remote repository</h2>
                     </section>
                     <section>
                         Clone
