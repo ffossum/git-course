@@ -84,7 +84,15 @@
                     </section>
 
                     <section>
-                        <h3>init</h3>
+                        <h3>Help!</h3>
+                        <p class="fragment">Show built-in documentation</p>
+                        <p>
+                            <pre class="fragment"><code>$ git help &lt;command&gt;</code></pre>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3>Init</h3>
                         <p class="fragment">Initialize your Git repository!</p>
                         <p>
                             <pre class="fragment"><code>$ git init MyStuff</code></pre>
@@ -99,7 +107,7 @@
                     </section>
 
                     <section>
-                        <h3>status</h3>
+                        <h3>Status</h3>
                         <p class="fragment">What's happening in my workspace?</p>
                         <p>
                             <pre class="fragment current-visible"><code>$ git status</code></pre>
@@ -117,7 +125,7 @@ nothing to commit (create/copy files and use "git add" to track)
                     </section>
 
                     <section>
-                        <h3>status</h3>
+                        <h3>Status (cont.)</h3>
                         <p>
                             <pre class="fragment"><code>$ echo "Content" > MyFirstFile.txt</code></pre>
                         </p>
@@ -139,7 +147,7 @@ nothing added to commit but untracked files present (use "git add" to track)
                     </section>
 
                     <section>
-                        <h3>add</h3>
+                        <h3>Add</h3>
                         <p class="fragment">Adding new or changed files to the commit (staging)</p>
                         <p>
                             <pre class="fragment"><code>$ git add MyFirstFile.txt</code></pre>
@@ -160,7 +168,7 @@ Changes to be committed:
                     </section>
 
                     <section>
-                        <h3>rm</h3>
+                        <h3>RM</h3>
                         <p class="fragment">Removing/deleting existing files completely</p>
                         <p>
                             <pre class="fragment"><code>$ git rm MyExistingFile.txt</code></pre>
@@ -178,7 +186,7 @@ Changes to be committed:
                     </section>
 
                     <section>
-                        <h3>diff (--cached)</h3>
+                        <h3>Diff</h3>
                         <p class="fragment">Show differences between e.g. local file and previous commit</p>
                         <p>
                             <pre class="fragment"><code>$ git diff</code></pre>
@@ -202,7 +210,7 @@ create mode 100644 SomeNewFile.txt
                     </section>
 
                     <section>
-                        <h3>log</h3>
+                        <h3>Log</h3>
                         <p class="fragment">Show change history</p>
                         <p>
                             <pre class="fragment"><code>$ git log</code></pre>
@@ -227,7 +235,7 @@ Adding existing file
                     </section>
 
                     <section>
-                        <h3>reset</h3>
+                        <h3>Reset</h3>
                         <p class="fragment">Removing staged changes from the commit</p>
                         <p>
                             <pre class="fragment"><code>$ git reset HEAD MyFirstFile.txt</code></pre>
@@ -248,7 +256,7 @@ nothing added to commit but untracked files present (use "git add" to track)</co
                     </section>
 
                     <section>
-                        <h3>checkout</h3>
+                        <h3>Checkout</h3>
                         <p class="fragment">Checkout a branch or paths to the working tree</p>
                         <p class="fragment">May be used to switch between branches, overwrite local changes with the original or another version</p>
                         <p>
@@ -453,17 +461,59 @@ $ git merge experiment</code></pre>
                     <section>
                         <h2>Working with remote repositories</h2>
                     </section>
+
                     <section>
-                        Clone
+                        <h3>Clone</h3>
+                        <p class="fragment">Clone a repository locally</p>
+                        <p>
+                            <pre class="fragment"><code>$ git clone https://github.com/ffossum/git-course.git</code></pre>
+                        </p>
+                        <p>
+                            <pre class="fragment"><code>
+Cloning into 'git-course'...
+remote: Counting objects: 6807, done.
+remote: Compressing objects: 100% (2968/2968), done.
+remote: Total 6807 (delta 3610), reused 6807 (delta 3610)
+Receiving objects: 100% (6807/6807), 4.38 MiB | 1.33 MiB/s, done.
+Resolving deltas: 100% (3610/3610), done.
+Checking connectivity... done.
+                            </code></pre>
+                        </p>
                     </section>
+
                     <section>
-                        Push
+                        <h3>Pull</h3>
+                        <p class="fragment">Pull changes from remote repositories</p>
+                        <p class="fragment">(requires that you've got no local changes to tracked files (see stash!))</p>
+                        <p>
+                            <pre class="fragment"><code>$ git pull</code></pre>
+                            <pre class="fragment"><code>$ git pull --rebase</code></pre>
+                        </p>
+                        <p class="fragment">(Fetch + merge does the same as 'git pull' in distinct operations, handy in some situations)</p>
                     </section>
+
                     <section>
-                        Pull
+                        <h3>Push</h3>
+                        <p class="fragment">Push your local changes remotely</p>
+                        <p class="fragment">(requires that you've pulled the latest changes in the relevant branches)</p>
+                        <p>
+                            <pre class="fragment"><code>$ git push</code></pre>
+                        </p>
+                        <p>
+                            <pre class="fragment"><code>
+Counting objects: 22, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.11 KiB | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+To git@github.com:ffossum/git-course.git
+e0fa526..12c990a  master -> master
+                            </code></pre>
+                        </p>
                     </section>
+
                     <section>
-                        Origin
+                        <h3>Origin</h3>
                     </section>
                 </section>
 
@@ -471,26 +521,33 @@ $ git merge experiment</code></pre>
                     <section>
                         <h2>Useful tools</h2>
                     </section>
+
                     <section>
-                        stash
+                        <h3>Stash</h3>
                     </section>
+
                     <section>
-                        rebase -i
+                        <h3>Rebase -i</h3>
                     </section>
+
                     <section>
-                        revert
+                        <h3>Revert</h3>
                     </section>
+
                     <section>
-                        cherry-pick
+                        <h3>Cherry-pick</h3>
                     </section>
+
                     <section>
-                        bisect
+                        <h3>Bisect</h3>
                     </section>
+
                     <section>
-                        clean
+                        <h3>Clean</h3>
                     </section>
+
                     <section>
-                        commit --amend
+                        <h3>Commit --amend</h3>
                     </section>
                 </section>
 			</div>
